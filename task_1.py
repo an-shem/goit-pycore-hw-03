@@ -1,7 +1,7 @@
 from datetime import datetime
 
 def get_days_from_today(date: str) -> str:
-    if type(date) is not str:
+    if not isinstance(date, str):
         return("Date must be a string.")
     date_format = "%Y-%m-%d"
     try:
