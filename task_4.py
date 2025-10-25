@@ -1,12 +1,13 @@
 from datetime import datetime, timedelta
 
+
 def get_upcoming_birthdays(users):
     res = []
     today = datetime.today().date()
 
     for user in users:
         user_birthday_datetime = datetime.strptime(user["birthday"], "%Y.%m.%d").date()
-        birthday_this_year = user_birthday_datetime.replace(year=2025)
+        birthday_this_year = user_birthday_datetime.replace(year=today.year)
 
         if 0 <= ((birthday_this_year - today).days) < 7:
             if birthday_this_year.weekday() == 5:
